@@ -13,8 +13,8 @@ for i in range(m):
     print()
 
 for i in range(m):
-    sum = 0
+    curr_sum = 0
     for j in range(n):
-        sum += matrix[i][j]
-    if(sum % 2 != 0):
-        print(f"Dòng {i} (tổng : {sum})")
+        curr_sum += matrix[i][j]
+    if(curr_sum % 2 != 0):
+        print(f"Dòng {i} (tổng : {curr_sum})")
