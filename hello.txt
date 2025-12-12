@@ -1,0 +1,29 @@
+def is_kaprekar(n):
+    if n < 1:
+        return False
+    
+    sqr = n * n
+    d = len(str(n))
+    divisor = 10 ** d
+    
+    right = sqr % divisor
+    left = sqr // divisor
+    
+    return left + right == n
+
+def list_range_kaprekar(start, end):
+    result = []
+    for i in range(start, end + 1):
+        if is_kaprekar(i):
+            result.append(i)
+    return result
+
+# Phần kiểm tra kết quả
+if __name__ == "__main__":
+    # Test câu a
+    print(is_kaprekar(45))
+    print(is_kaprekar(9))
+    print(is_kaprekar(297))
+    
+    # Test câu b
+    print(list_range_kaprekar(1, 1000))
